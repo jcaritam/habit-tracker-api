@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:17-alpine
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: habit_db
+    volumes:
+      - "habit_vol:/var/lib/postgres/data"
+
+volumes:
+  habit_vol:
